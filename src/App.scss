@@ -1,0 +1,179 @@
+body {
+  // reset default styles
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 800px) {
+    justify-content: flex-start;
+    padding: 2rem;
+  }
+}
+
+#root {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10rem;
+
+  @media (max-width: 800px) {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 2rem;
+  border-bottom: 1px solid black;
+  padding: 1rem 1rem;
+  width: 100%;
+  img {
+    width: 100px;
+    height: auto;
+  }
+  h1 {
+    margin: 0;
+  }
+}
+
+main {
+  width: 100%;
+  section {
+    form {
+      display: grid;
+      gap: 1rem;
+      button[type='submit'] {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 0.75rem 1rem;
+        letter-spacing: 0.05rem;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover {
+          background: #0056b3;
+        }
+      }
+      fieldset {
+        border: none;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        label {
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size: 1rem;
+          letter-spacing: 0.05rem;
+          button {
+            background: transparent;
+            font-family: inherit;
+            font-size: inherit;
+            border: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 0;
+            font-size: 1rem;
+            letter-spacing: 0.05rem;
+            text-decoration: underline;
+            color: red;
+            cursor: pointer;
+            &:hover {
+              background: red;
+              color: white;
+            }
+          }
+        }
+        input,
+        select,
+        textarea {
+          padding: 0.5rem;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          font-size: 1rem;
+          font-family: inherit;
+          letter-spacing: inherit;
+        }
+        &:has(textarea) {
+          background: rgb(245, 150, 150);
+          padding: 1.5rem 1rem;
+
+          label {
+            position: relative;
+            &::after {
+              content: '*';
+              font-size: 0.8rem;
+              color: red;
+            }
+          }
+          &:has(textarea:focus) {
+            background: rgb(234, 103, 103);
+          }
+        }
+
+        &:has(input[type='checkbox']) {
+          padding: 2rem 1rem;
+          background: rgb(150, 245, 150);
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  img {
+    width: 80px;
+    height: auto;
+  }
+  p {
+    font-size: 0.8rem;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  button {
+    background: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
