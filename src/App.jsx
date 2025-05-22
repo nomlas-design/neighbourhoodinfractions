@@ -1,10 +1,18 @@
 import logo from './assets/logo.svg';
 import badge from './assets/badge.png';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import './App.scss';
 
 function App() {
   const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    console.log(
+      '░█▀█░█▀█░█▄█░█░░░█▀█░█▀▀\r\n░█░█░█░█░█░█░█░░░█▀█░▀▀█\r\n░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░▀░▀▀▀\r\n░█▀▄░█▀▀░█▀▀░▀█▀░█▀▀░█▀█\r\n░█░█░█▀▀░▀▀█░░█░░█░█░█░█\r\n░▀▀░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀\r\n>> declan@nomlas.design'
+    );
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -39,6 +47,7 @@ function App() {
 
   return (
     <>
+      <Analytics />
       <header>
         <img src={logo} className='logo' alt='Vite logo' />
         <h1>Brunswick West Reporting Portal</h1>
